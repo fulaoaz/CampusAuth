@@ -75,6 +75,7 @@ npm run build:linux
 1. `build-power-helper.sh` 构建 musl 静态命令行辅助程序，供需要系统权限的电源计划使用。
 2. `prepare-appimage-libs.sh` 准备 `libfribidi`、`libharfbuzz`、`libgraphite2`，补齐打包工具默认可能排除的文字渲染库，并带上对应版权声明。
 3. Tauri 构建界面、应用和 DEB / AppImage，资源中包含辅助程序与许可文件。
+4. `finalize-appimage.sh` 在 GTK 依赖扫描后恢复静态辅助程序的原始字节，执行版本与非执行电源预览检查，再调用官方输出插件封装。这样避免打包工具的 ELF 路径改写破坏静态程序。
 
 产物位于 `desktop/target/release/bundle/`。如果设置了 `CARGO_TARGET_DIR`，输出位置随该变量变化。
 
