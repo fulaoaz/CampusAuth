@@ -54,6 +54,11 @@ case "$(uname -m)" in
   *) printf '%s\n' '当前 AppImage 架构未受支持。' >&2; exit 2 ;;
 esac
 output="$bundle_dir/CampusAuth_${version}_${package_arch}.AppImage"
+# A cached official type2 runtime avoids an optional network fetch by
+# appimagetool. LDAI_RUNTIME_FILE can also point at a separately verified copy.
+if [[ -z "${LDAI_RUNTIME_FILE:-}" && -f "$tool_dir/runtime-$architecture" ]]; then
+  export LDAI_RUNTIME_FILE="$tool_dir/runtime-$architecture"
+fi
 # Only invoke the official output stage; rerunning the GTK dependency pass
 # here would rewrite and break the restored helper again.
 APPIMAGE_EXTRACT_AND_RUN=1 ARCH="$architecture" LDAI_OUTPUT="$output" \

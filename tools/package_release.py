@@ -55,8 +55,9 @@ def build():
         binary = ROOT / ("dist/campus-auth-server-linux-" + arch)
         if not binary.exists():
             continue
-        paths = [binary, ROOT / "README.md", ROOT / "LICENSE", ROOT / "THIRD_PARTY_NOTICES.txt"]
+        paths = [binary, ROOT / "README.md", ROOT / "LICENSE", ROOT / "THIRD_PARTY_NOTICES.txt", ROOT / "assets/NotoSansSC-OFL.txt"]
         paths += sorted((ROOT / "deploy/linux").glob("*.sh"))
+        paths += sorted((ROOT / "docs").glob("*.md"))
         dest = ROOT / "dist" / ("CampusAuth-server-" + version + "-linux-" + arch + ".tar.gz")
         with tarfile.open(dest, "w:gz") as output:
             for path in paths:
