@@ -1,6 +1,6 @@
 # 构建与安装包设计
 
-本页面向开发者。GitHub 当前发布源码与文档，尚无安装包发行附件；下面的文件名描述本机构建产物，不代表已上线的下载项。
+本页面向开发者。普通用户可直接从 [GitHub Release](https://github.com/fulaoaz/CampusAuth/releases/latest) 下载对应安装包；以下步骤用于从源码构建相同类型的产物。
 
 ## 工程关系
 
@@ -73,7 +73,7 @@ npm run build:linux
 该命令按顺序执行：
 
 1. `build-power-helper.sh` 构建 musl 静态命令行辅助程序，供需要系统权限的电源计划使用。
-2. `prepare-appimage-libs.sh` 准备 `libfribidi`、`libharfbuzz`、`libgraphite2`，补齐打包工具默认可能排除的文字渲染库。
+2. `prepare-appimage-libs.sh` 准备 `libfribidi`、`libharfbuzz`、`libgraphite2`，补齐打包工具默认可能排除的文字渲染库，并带上对应版权声明。
 3. Tauri 构建界面、应用和 DEB / AppImage，资源中包含辅助程序与许可文件。
 
 产物位于 `desktop/target/release/bundle/`。如果设置了 `CARGO_TARGET_DIR`，输出位置随该变量变化。

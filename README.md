@@ -2,11 +2,11 @@
 
 **校园网自动认证、断线重连与设备管理。**
 
-[项目源码](https://github.com/fulaoaz/CampusAuth) · 作者 **fulao** · [个人博客](https://fulao.cc)
+[项目源码](https://github.com/fulaoaz/CampusAuth) · [下载 Release](https://github.com/fulaoaz/CampusAuth/releases/latest) · 作者 **fulao** · [个人博客](https://fulao.cc)
 
 CampusAuth 是独立的校园网认证工具，内置青海大学锐捷 ePortal / SAM+ 配置，也支持自定义兼容的 ePortal 网关。认证核心使用 Rust，桌面端和 Linux 服务器端共用认证逻辑，提供完整中文界面。
 
-**当前 GitHub 仓库仅发布整理后的源码和文档，尚未发布安装包。** 请按[构建文档](docs/build.md)自行构建；在线安装脚本需要正式发行附件，目前应使用 `--binary` 指定本地构建的服务器程序。
+源码仓库只包含当前实现与文档，安装包单独放在 [GitHub Release](https://github.com/fulaoaz/CampusAuth/releases/latest)。需要自行构建时，请参阅[构建文档](docs/build.md)。
 
 ## 两种使用方式
 
@@ -27,7 +27,24 @@ CampusAuth 是独立的校园网认证工具，内置青海大学锐捷 ePortal 
 - **可选电源计划**：按星期安排睡眠、休眠、关机与唤醒；先预览后授权应用；倒计时内可取消本次动作。
 - **管理与诊断**：服务器管理员密码、服务安装维护、日志与脱敏诊断导出；更新由用户主动检查。
 
-## 开始使用
+## 下载与安装
+
+在 [最新 Release](https://github.com/fulaoaz/CampusAuth/releases/latest) 选择对应文件：
+
+| 文件 | 适合场景 |
+|---|---|
+| `windows-x64-setup.exe` | Windows 已有 WebView2，使用小体积标准安装包；缺少时会询问是否联网获取 |
+| `windows-x64-full-offline.exe` | Windows 完整离线安装，内含 WebView2 安装组件，已有运行时则跳过 |
+| `linux-amd64.deb` | Debian/Ubuntu 标准桌面包，系统依赖由 apt 处理 |
+| `linux-amd64.AppImage` 或 `linux-amd64-portable.zip` | Linux 完整桌面包；ZIP 附带无 FUSE 启动入口 |
+| `CampusAuth-server-<版本>-linux-amd64.tar.gz` | Linux x64 服务器离线部署包 |
+| `CampusAuth-server-<版本>-linux-arm64.tar.gz` | Linux ARM64 服务器离线部署包 |
+
+Windows 双击安装包即可。Linux DEB 使用 `sudo apt install ./文件名.deb`；AppImage 赋予执行权限后启动，无 FUSE 环境使用便携 ZIP 内的 `run-appimage.sh`。服务器包解压后运行 `sudo bash deploy/linux/install_linux.sh`。
+
+Release 同时提供 `SHA256SUMS` 和 `VALIDATION.md`，分别用于文件校验与了解实际验证边界。安装包和运行时不放进 Git 源码历史。
+
+## 从源码开始
 
 ### 构建 Windows 桌面端
 

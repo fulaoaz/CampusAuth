@@ -9,7 +9,10 @@
         "files": {
           "/usr/lib/libfribidi.so.0": "resources/linux/libfribidi.so.0",
           "/usr/lib/libharfbuzz.so.0": "resources/linux/libharfbuzz.so.0",
-          "/usr/lib/libgraphite2.so.3": "resources/linux/libgraphite2.so.3"
+          "/usr/lib/libgraphite2.so.3": "resources/linux/libgraphite2.so.3",
+          "/usr/share/doc/libfribidi0/copyright": "resources/linux/libfribidi0-copyright",
+          "/usr/share/doc/libharfbuzz0b/copyright": "resources/linux/libharfbuzz0b-copyright",
+          "/usr/share/doc/libgraphite2-3/copyright": "resources/linux/libgraphite2-3-copyright"
         }
       }
     }

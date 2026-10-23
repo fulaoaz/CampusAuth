@@ -1,6 +1,6 @@
 # Linux 服务器部署与维护
 
-服务器端使用静态 Rust 程序，可在无图形环境运行。当前 GitHub 仅发布源码，请先按[构建文档](build.md)获得服务器程序，再使用本地文件部署；在线下载入口需要将来的正式发行附件。
+服务器端使用静态 Rust 程序，可在无图形环境运行。从 [GitHub Release](https://github.com/fulaoaz/CampusAuth/releases/latest) 下载对应架构的服务器部署包，或按[构建文档](build.md)自行构建。离线部署使用本地文件；在线安装器从正式发行附件下载并校验。
 
 ## 组件模式
 

@@ -13,3 +13,11 @@ for name in libfribidi.so.0 libharfbuzz.so.0 libgraphite2.so.3; do
   fi
   cp -- "$(readlink -f -- "$source")" "$destination/$name"
 done
+for package in libfribidi0 libharfbuzz0b libgraphite2-3; do
+  license="/usr/share/doc/$package/copyright"
+  if [[ ! -f "$license" ]]; then
+    printf '构建机缺少 %s 的版权声明，停止生成完整包。\n' "$package" >&2
+    exit 2
+  fi
+  cp -- "$license" "$destination/$package-copyright"
+done
