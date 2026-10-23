@@ -1,0 +1,43 @@
+[package]
+name = "campus-auth-desktop"
+version = "0.3.0"
+edition = "2024"
+rust-version = "1.88"
+description = "CampusAuth 校园网认证桌面应用"
+license = "MIT"
+repository = "https://github.com/fulaoaz/CampusAuth"
+default-run = "CampusAuth"
+
+[[bin]]
+name = "CampusAuth"
+path = "src/main.rs"
+
+[features]
+default = []
+custom-protocol = ["tauri/custom-protocol"]
+
+[dependencies]
+anyhow = "1"
+campus-auth = { path = "..", default-features = false }
+directories = "6"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri = { version = "2.12.1", features = ["tray-icon", "image-png"] }
+tauri-plugin-autostart = "2.5.1"
+tauri-plugin-dialog = "2.7.3"
+tauri-plugin-opener = "2.5.5"
+tauri-plugin-single-instance = "2.4.5"
+tempfile = "3"
+url = "2"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61", features = ["Win32_Foundation", "Win32_UI_Shell", "Win32_UI_WindowsAndMessaging", "Win32_System_Threading", "Win32_System_Registry"] }
+
+[build-dependencies]
+tauri-build = { version = "2.7.1", features = [] }
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = true
+panic = "abort"

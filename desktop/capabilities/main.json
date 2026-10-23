@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "main-window",
+  "description": "CampusAuth 本地应用窗口；系统操作通过受限 Rust 命令完成。",
+  "windows": ["main"],
+  "permissions": ["core:default", "core:window:allow-start-dragging", "core:window:allow-toggle-maximize"]
+}

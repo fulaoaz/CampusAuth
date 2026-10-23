@@ -1,0 +1,8 @@
+/target/
+/node_modules/
+/bundle/
+/runtime/
+/gen/
+/resources/campus-auth-power-helper
+/resources/linux/
+*.log

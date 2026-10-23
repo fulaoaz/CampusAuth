@@ -1,0 +1,17 @@
+{
+  "bundle": {
+    "targets": ["deb", "appimage"],
+    "resources": {
+      "resources/campus-auth-power-helper": "resources/campus-auth-power-helper"
+    },
+    "linux": {
+      "appimage": {
+        "files": {
+          "/usr/lib/libfribidi.so.0": "resources/linux/libfribidi.so.0",
+          "/usr/lib/libharfbuzz.so.0": "resources/linux/libharfbuzz.so.0",
+          "/usr/lib/libgraphite2.so.3": "resources/linux/libgraphite2.so.3"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+# Dependencies and build output
+node_modules/
+target/
+dist/
+ui/dist/
+desktop/gen/
+*.pdb
+*.tsbuildinfo
+
+# Local verification and preserved work
+artifacts/
+tests/
+.build-work/
+.build-spec/
+__pycache__/
+.pytest_cache/
+
+# Private application state
+accounts.json
+accounts.json.bak
+config.ini
+config.ini.bak-*
+native_config.json
+admin_auth.json
+deployment.json
+reconnect.json
+desktop_preferences.json
+desktop_state.json
+ui.json
+service-cache/
+services_cache.json
+power_schedule.json
+pending_power_schedule.json
+power_draft.json
+power_countdown.json
+power_canceled.json
+webui.env
+service.env
+webui_token*
+web_token
+webui-token
+server-token
+auth.lock
+logs/
+*.log
+*.tmp

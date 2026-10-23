@@ -1,0 +1,17 @@
+* text=auto
+*.rs text eol=lf
+*.toml text eol=lf
+*.lock text eol=lf
+*.md text eol=lf
+*.sh text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.py text eol=lf
+*.ps1 text eol=crlf
+*.ttf binary
+*.otf binary
+*.png binary
+*.ico binary
+THIRD_PARTY_NOTICES.txt -whitespace
+assets/NotoSansSC-OFL.txt -whitespace

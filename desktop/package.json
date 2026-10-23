@@ -1,0 +1,15 @@
+{
+  "name": "campus-auth-desktop",
+  "private": true,
+  "version": "0.3.0",
+  "scripts": {
+    "dev": "tauri dev",
+    "build:standard": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-windows.ps1 -Variant standard",
+    "build:offline": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-windows.ps1 -Variant offline",
+    "build:windows": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-windows.ps1 -Variant all",
+    "build:linux": "sh scripts/build-power-helper.sh && bash scripts/prepare-appimage-libs.sh && tauri build --bundles deb,appimage"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "2.12.1"
+  }
+}
